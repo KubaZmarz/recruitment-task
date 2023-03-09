@@ -34,9 +34,9 @@ public class Exercise1 {
         // Won't be using PO, as there is only literally 1 click on page/component
         this.driver.findElement(By.xpath("//li/a/span[text()=\"Time\"]")).click();
         Waits.waitForElementToBeVisible(this.driver, TIME_LIST_BTN_XPATH_SLC);
-        this.driver.findElement(By.xpath("//div[contains(text(),'" + TIME_PERIOD + "')]/../..//button")).click();
+        this.driver.findElement(By.xpath("TIME_LIST_BTN_XPATH_SLC")).click();
         Waits.waitForElementToBeVisible(this.driver, CHAT_BUBBLE_ICON_CSS_SLC);
-        this.driver.findElement(By.cssSelector(".bi-chat-dots-fill")).click();
+        this.driver.findElement(CHAT_BUBBLE_ICON_CSS_SLC).click();
 
         new WebDriverWait(this.driver, Duration.ofSeconds(5)) // wait for el
                 .until(ExpectedConditions.textToBePresentInElementValue(TEXTAREA_CSS_SLC, ASSERTION_TEXT)); // assert
